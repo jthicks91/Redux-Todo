@@ -1,8 +1,8 @@
 export const ADD_TODO = "ADD_TODO";
 export const HANDLE_INPUT = "HANDLE_INPUT";
 export const TOGGLE_COMPLETE = "TOGGLE_COMPLETE";
-export const DELETE_TODO = "DELETE_TODO";
-export const TOGGLE_IMPORTANT = "TOGGLE_IMPORTANT";
+// export const DELETE_TODO = "DELETE_TODO";
+// export const TOGGLE_IMPORTANT = "TOGGLE_IMPORTANT";
 
 export const addTodo = todo => {
   return {
@@ -18,12 +18,12 @@ export const handleInput = event => {
   };
 };
 
-export const deleteTodo = id => {
-  return {
-    type: DELETE_TODO,
-    payload: id
-  };
-};
+// export const deleteTodo = id => {
+//   return {
+//     type: DELETE_TODO,
+//     payload: id
+//   };
+// };
 
 export const toggleComplete = id => {
   return {
@@ -32,9 +32,9 @@ export const toggleComplete = id => {
   };
 };
 
-export const toggleImportant = id => {
-  return {
-    type: TOGGLE_IMPORTANT,
-    payload: id
-  };
-};
+// export const toggleImportant = id => {
+//   return {
+//     type: TOGGLE_IMPORTANT,
+//     payload: id
+//   };
+// };
