@@ -1,35 +1,29 @@
 import React from "react";
 
 const Todos = props => {
-  const onClick = e => {
+  const onClick = event => {
     props.toggleComplete(props.id);
   };
 
-  const toggleImportant = e => {
+  const toggleImportant = event => {
     props.important(props.id);
   };
 
-  const deleteToDo = e => {
-    e.stopPropagation();
+  const deleteToDo = event => {
+    event.stopPropagation();
     props.delete(props.id);
   };
 
   return (
     <div className="todo-list">
-      <div
-        className={props.Todos.important ? "marker important" : "marker"}
-        onClick={toggleImportant}
-      >
+      <div className={"important"} onClick={toggleImportant}>
         <i class="fas fa-exclamation-circle" />
-        <p
-          className={props.todos.completed ? "complete" : null}
-          onClick={onClick}
-        >
-          {props.todos.value}
-        </p>
-        <div className="delete-todo" onClick={deleteToDo}>
-          <i class="fas fa-minus-circle" />
-        </div>
+      </div>
+      <p className="complete" onClick={onClick}>
+        {/* {props.todo.value} */}
+      </p>
+      <div className="delete-todo" onClick={deleteToDo}>
+        <i class="fas fa-minus-circle" />
       </div>
     </div>
   );
