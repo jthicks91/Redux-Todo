@@ -1,29 +1,26 @@
 import React from "react";
+import { connect } from "react-redux";
+import { toggleComplete } from "../actions/index";
 
-const Todos = props => {
-  const onClick = event => {
-    props.toggleComplete(props.id);
+class Todos extends React.Component {
+  toggleComplete = () => {
+    this.props.toggleComplete(this.props.index);
   };
+  render() {
+    return (
+      <h2
+        onClick={this.toggleComplete}
+        style={
+          this.props.todo.complete ? { textDecoration: "line-through" } : null
+        }
+      >
+        {this.props.todo.value}
+      </h2>
+    );
+  }
+}
 
-  //   const toggleImportant = event => {
-  //     props.important(props.id);
-  //   };
-
-  //   const deleteToDo = event => {
-  //     event.stopPropagation();
-  //     props.delete(props.id);
-  //   };
-
-  return (
-    <div className="todo-list">
-      {/* <div className={"important"} onClick={toggleImportant}>
-        <i class="fas fa-exclamation-circle" />
-      </div> */}
-      <p className="complete" onClick={onClick} />
-      {/* <div className="delete-todo" onClick={deleteToDo}>
-        <i class="fas fa-minus-circle" />
-      </div> */}
-    </div>
-  );
-};
-export default Todos;
+export default connect(
+  null,
+  { toggleComplete }
+)(Todos);
