@@ -1,8 +1,4 @@
-export const ADD_TODO = "ADD_TODO";
-// export const HANDLE_INPUT = "HANDLE_INPUT";
-export const TOGGLE_COMPLETE = "TOGGLE_COMPLETE";
-export const DELETE_TODO = "DELETE_TODO";
-export const TOGGLE_IMPORTANT = "TOGGLE_IMPORTANT";
+import { DELETE_TODO, ADD_TODO, TOGGLE_COMPLETE } from "../reducer/index.js";
 
 export const addTodo = todo => {
   const newToDo = {
@@ -36,9 +32,9 @@ export const toggleComplete = id => {
   };
 };
 
-export const toggleImportant = id => {
-  return {
-    type: TOGGLE_IMPORTANT,
-    payload: id
-  };
-};
+// export const toggleImportant = id => {
+//   return {
+//     type: TOGGLE_IMPORTANT,
+//     payload: id
+//   };
+// };
