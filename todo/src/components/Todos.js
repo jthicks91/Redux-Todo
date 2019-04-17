@@ -1,18 +1,16 @@
 import React from "react";
-import { connect } from "react-redux";
-import { toggleComplete } from "../actions/index";
+// import { connect } from "react-redux";
+// import { toggleComplete } from "../actions/index";
 
 class Todos extends React.Component {
   toggleComplete = () => {
-    this.props.toggleComplete(this.props.index);
+    this.props.toggle(this.props.index);
   };
   render() {
+    console.log(this.props)
     return (
       <h2
-        onClick={this.toggleComplete}
-        style={
-          this.props.todo.complete ? { textDecoration: "line-through" } : null
-        }
+        onClick={this.props.toggle}
       >
         {this.props.todo.value}
       </h2>
@@ -20,7 +18,4 @@ class Todos extends React.Component {
   }
 }
 
-export default connect(
-  null,
-  { toggleComplete }
-)(Todos);
+export default Todos;
